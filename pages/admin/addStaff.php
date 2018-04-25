@@ -55,7 +55,9 @@
        </div>
        <button type="submit" class="btn btn-primary" id="butns" name="registerTeacher">Register</button>
        <a href="tindex.php"><input type="button" class="btn btn-primary" id="butns" value="Back"></a>
-       
 
+       <footer>
+         &copy2018  Nana Adjoa Bentil
+       </footer>
    </body>
  </html>

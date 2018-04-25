@@ -47,5 +47,10 @@
 
   <button type="submit" class="btn btn-primary" id="butns" name="studentFinancial">Submit</button>
   </form>
+
+  <footer>
+    &copy2018  Nana Adjoa Bentil
+  </footer>
+  
 </body>
 </html>

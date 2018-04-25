@@ -25,8 +25,8 @@
 
   <form method="post" id="form">
 
-    <div class="form-group">
-      <label for="id">Student ID Number:</label>
+    <!-- <div class="form-group"> -->
+      <label for="id">Student:</label>
       <input type="text" class="form-control" id="id" name="id">
     </div>
 
@@ -53,5 +53,8 @@
         viewAllHealth();
       }
       ?>
+      <footer>
+        &copy2018  Nana Adjoa Bentil
+      </footer>
   </body>
 </html>

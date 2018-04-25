@@ -86,5 +86,8 @@
 
       <button type="submit" class="btn btn-primary" id="butns" name="registerStudent">Register</button>
 
+      <footer>
+        &copy2018  Nana Adjoa Bentil
+      </footer>
    </body>
  </html>

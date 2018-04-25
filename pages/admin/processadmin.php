@@ -117,7 +117,12 @@ function registerStudent()
 
   if($run)
   {
-    echo $firstname." ". $lastname."'s' student ID is". " ".$id;
+    session_start();
+    $_SESSION['parentmail'] = $email;
+    $_SESSION['studname'] = $firstname . " ". $lastname;
+    $_SESSION['studid'] = $id;
+    // echo $firstname." ". $lastname."'s' student ID is". " ".$id;
+    echo $firstname . " ". $lastname ." successfully regstered into system with student ID ".$id."<br>";
     //create popup window to show child's id.
   }
   else
@@ -311,11 +316,11 @@ function enterCondition()
 
   if ($run)
   {
-    echo "Condition name: ". $condition ." successfully added to ID: ". $id;
+    echo "Condition name: ". $condition ." successfully added to ID: ". $id."<br>";
   }
   else
   {
-    echo "Condition name: ". $condition . " Not added. Try again";
+    echo "Condition name: ". $condition . " Not added. Try again"."<br>";
   }
 }
 
@@ -334,7 +339,7 @@ function searchHealth()
 
       while ($results = $login->fetch())
       {
-        echo $results['cid'].'<br><br>';
+        echo  "Record ID: ".$results['cid'].'<br><br>';
         echo "Student ID: ". $results['sid'].'<br><br>';
         echo "Health Condition: ". $results['health_condition'].'<br><br>';
         echo "Details: ". $results['details'].'<br><br><br><br>';
@@ -374,11 +379,11 @@ function deleteHealthRecord()
 
   if ($run)
   {
-    echo "Deletion successful.";
+    echo "Deletion successful."."<br>";
   }
   else
   {
-    echo "Problem occurred while deleting.";
+    echo "Problem occurred while deleting."."<br>";
   }
 }
 

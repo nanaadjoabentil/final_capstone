@@ -101,5 +101,8 @@ if (isset($_POST['updateStudentPersonal']))
 }
 
 ?>
+<footer>
+  &copy2018  Nana Adjoa Bentil
+</footer>
 </body>
 </html>

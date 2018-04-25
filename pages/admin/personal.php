@@ -56,6 +56,9 @@
     }
     ?>
   </form>
+  <footer>
+    &copy2018  Nana Adjoa Bentil
+  </footer>
 
   </body>
   </html>

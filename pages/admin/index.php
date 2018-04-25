@@ -32,6 +32,8 @@
            <button class="btn btn-lg btn-primary btn-block" type="submit" id="butns" name="adminlogin">Login</button>
          </form>
        </div>
-
+       <footer>
+         &copy2018  Nana Adjoa Bentil
+       </footer>
 </body>
 </html>

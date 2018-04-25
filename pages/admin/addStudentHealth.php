@@ -28,8 +28,8 @@
       <!-- including php page with function to process the insertion of the data entered in form into database -->
       <?php require_once('processadmin.php');?>
 
-        <div class="form-group">
-          <label for="id">Student ID:</label>
+        <!-- <div class="form-group"> -->
+          <label for="id">Student:</label>
           <input type="text" class="form-control" id="id" name="id" required>
         </div>
 
@@ -45,5 +45,9 @@
 
         <button type="submit" class="btn btn-primary" id="butns" name="enterCondition">Submit</button>
       </form>
+
+      <footer>
+        &copy2018  Nana Adjoa Bentil
+      </footer>
   </body>
 </html>

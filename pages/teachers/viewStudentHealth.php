@@ -20,6 +20,7 @@
 <body>
 
 <p id = "heading"> Student Health Information </p>
+<a href="health.php"><input type="button" class="btn btn-primary" id="butns" value="Back"></a>
 <br>
 
 <form method="post" id="form">
@@ -32,20 +33,23 @@
 
   </div>
   </form>
+  <?php
+
+  require_once('processteacher.php');
+
+  if (isset($_POST['searchHealth']))
+  {
+    searchHealth();
+  }
+  else
+  {
+    viewAllHealth();
+  }
+
+  ?>
+
+  <footer>
+    &copy2018  Nana Adjoa Bentil
+  </footer>
 </body>
 </html>
-
-<?php
-
-require_once('processteacher.php');
-
-if (isset($_POST['searchHealth']))
-{
-  searchHealth();
-}
-else
-{
-  viewAllHealth();
-}
-
-?>
