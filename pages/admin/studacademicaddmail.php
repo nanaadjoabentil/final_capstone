@@ -7,11 +7,6 @@ use PHPMailer\PHPMailer\Exception;
 //Load Composer's autoloader
 require '../../vendor/autoload.php';
 // session_start();
-if (isset($_POST['registerStudent']))
-{
-$parentmail = $_POST['email'];
-$childname = $_POST['firstname']. $_POST['lastname'];
-$childid = $_SESSION['studid'];
 
 $mail = new PHPMailer(true);                              // Passing `true` enables exceptions
 try {
@@ -39,7 +34,7 @@ try {
 
     //Content
     $mail->isHTML(true);                                  // Set email format to HTML
-    $mail->Subject = 'Student Registration in XYZ Primary School';
+    $mail->Subject = 'Student Academic information update - XYZ primary';
     $mail->Body    = 'Dear Parent, <br> Your child '.$childname.' has been successfully enrolled in XYZ Primary.'.'<br>
                       Please take note of '.$childname.'\'s student ID number: <b>'.$childid.'</b><br>';
     // $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
@@ -49,5 +44,4 @@ try {
 }
 catch (Exception $e) {
     echo 'Message could not be sent. Please check your connection or your settings'. "<br>";
-}
 }

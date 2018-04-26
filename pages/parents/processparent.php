@@ -117,7 +117,8 @@ function registerParent()
   {
     if ($run2)
     {
-      echo "Registration Successful";
+      // echo "Registration Successful";
+      getparentMail();
       //if query works, redirect to login page
       header("location: index.php");
     }
@@ -126,6 +127,28 @@ function registerParent()
   {
     echo "Error occurred during registration";
   }
+}
+
+//function to get parent email for sending emails
+function getparentMail()
+{
+  $username = $_POST['username'];
+  $name = $_POST['name'];
+  $studentid = $_POST['studentid'];
+
+  $sql1 = "SELECT contactemail FROM student WHERE parent1name = '$name' OR parent2name = '$name' AND id = '$studentid'";
+
+  $connect = new Connect;
+
+  $run = $connect->query($sql1);
+
+  $result = $connect->fetch();
+
+  session_start();
+
+  $_SESSION['parentemail'] = $result['contactemail'];
+  $_SESSION['name'] = $name;
+
 }
 
 //function to validate parent login

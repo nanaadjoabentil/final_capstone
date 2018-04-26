@@ -23,7 +23,9 @@
 <br>
 
      <form method="post" id="form">
-       <?php require_once('processadmin.php');?>
+       <?php require_once('processadmin.php');
+       include("studregistermail.php");
+       ?>
 
        <div class="form-group">
          <label for="firstname">First Name:</label>
@@ -32,7 +34,7 @@
 
        <div class="form-group">
          <label for="middlename">Middle Name:</label>
-         <input type="text" class="form-control" id="middlename" name="middlename" required>
+         <input type="text" class="form-control" id="middlename" name="middlename">
        </div>
 
        <div class="form-group">

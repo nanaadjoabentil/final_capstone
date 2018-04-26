@@ -23,7 +23,9 @@
 <br>
 
     <form method="post" action="#" id="form">
-       <?php require_once('processparent.php'); ?>
+       <?php require_once('processparent.php');
+       include("parentregistermail.php");
+       ?>
 
        <a href="index.php">Go to Login Page</a><br>
        <div class="form-group">
