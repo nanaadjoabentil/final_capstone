@@ -32,7 +32,10 @@
            <input type="password" class="form-control" name="password" placeholder="Password" required/><br>
 
            <button class="btn btn-lg btn-primary btn-block" type="submit" id="butns" name="parentlogin">Login</button>
-           <a href="parentRegister.php">Register</a>
+            <br>
+           <a href="parentRegister.php">Register</a> &nbsp&nbsp&nbsp&nbsp
+           <a href="changepassword.php">Forgot Password? Change!</a><br><br>
+           <a href="../index.php">Back to Homepage</a>
          </form>
        </div>
     </body>

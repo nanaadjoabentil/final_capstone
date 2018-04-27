@@ -19,12 +19,14 @@
    </head>
 <body>
 <p id = "heading"> Add Student Academic Information </p>
-<a href="academic.php"><input type="button" class="btn btn-primary" id="butns" value="Back"></a>
+<a href="academic.php"><input type="button" class="btn btn-primary" id="butns" value="Back"></a><br>
 <br>
 
 <!--bootstrap form below-->
 <form method="post" id="form">
-  <?php require_once('processteacher.php');?>
+  <?php require_once('processteacher.php');
+  include("studacademicaddmail.php");
+  ?>
 
   <div class="form-group">
     <label for="id">Student ID:</label>

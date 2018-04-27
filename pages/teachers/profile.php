@@ -26,7 +26,7 @@
   <form method="post" id="form">
     <a href="teacherindex.php"><input type="button" class="btn btn-primary" id="butns" value="Back"></a>
     <button type="submit" class="btn btn-primary" id="butns" name="update">Update Profile</button>
-    <button type="submit" class="btn btn-primary" id="butns" name="search">Search</button>
+    <button type="submit" class="btn btn-primary" id="butns" name="search">View Profile Information</button>
     <br><br><br>
     <?php
     require_once("processteacher.php");

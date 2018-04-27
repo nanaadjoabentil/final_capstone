@@ -842,7 +842,13 @@ function registerTeacher()
   {
     if ($run2)
     {
-      echo "Teacher registration successful";
+      header('Refresh: 1.5;');
+      echo "Teacher registration successful."."<br>";
+
+      session_start();
+      $_SESSION['staffname'] = $name;
+      $_SESSION['staffemail'] = $email;
+      $_SESSION['staffusername'] = $username;
     }
     else
     {
@@ -1067,9 +1073,7 @@ function dashboardstaff()
       <button id="dbutton" name="addcns">Add Staff Subjects and Classes Information</button>
       <a href="viewStaff.php"><button id="dbutton" name="viewprofile"><br>View Staff Profile</button></a>
       <a href="updateStaff.php"><button id="dbutton" name="updateprofile"><br>Update Staff Personal Information</button></a>
-      <a href="../teachers/viewStaffSubjects.php"><button id="dbutton" name="viewcns">View Staff Subjects and Classes Information</button></a>
-      <a href="deleteStaff.php"><button id="dbutton" name="deleteprofile"><br>Delete Staff Personal Information</button></a>
-      <a href="../teachers/deleteStaffSubjects.php"><button id="dbutton" name="deletecns">Delete Staff Subjects and Classes Information</button></a>
+      <a href="viewStaffSubjects.php"><button id="dbutton" name="viewcns">View Staff Subjects and Classes Information</button></a>
       </form>
     </ul>
   </nav>';
@@ -1077,7 +1081,7 @@ function dashboardstaff()
 
 if(isset($_POST['addcns']))
 {
-  header("location: ../teachers/addStaffSubjects.php");
+  header("location: addStaffSubjects.php");
 }
 if(isset($_POST['viewprofile']))
 {
@@ -1089,7 +1093,7 @@ if(isset($_POST['updateprofile']))
 }
 if(isset($_POST['viewcns']))
 {
-  header("location: ../teachers/viewStaffSubjects.php");
+  header("location: viewStaffSubjects.php");
 }
 if(isset($_POST['deleteprofile']))
 {
@@ -1122,7 +1126,6 @@ function dashboardinventory()
       <a href="viewInventory.php"><button id="dbutton" name="view">View Inventory Items</button></a>
       <a href="viewWithdrawals.php"><button id="dbutton" name="viewwithdrawals">View Inventory Withdrawals</button></a>
       <a href="withdrawals.php"><button id="dbutton" name="withdraw">Withdraw from Inventory</button></a>
-      <a href="deleteInventory.php"><button id="dbutton" name="delete">Delete Inventory Items</button></a>
       </form>
     </ul>
   </nav>';

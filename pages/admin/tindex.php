@@ -24,7 +24,7 @@
 <p id = "heading"> Dashboard </p>
 <br>
 
-<h4 id="parentswelcome"> Welcome ADMIN!</h4><br>
+<h4 id="parentswelcome"> Welcome ADMIN! <a id="logout" href="logout.php">Logout</a></h4><br>
 You can access information about students, staff and inventory from here. <br><br>
 To access these, click on the tab with the name of the information you would like to see. <br><br>
 

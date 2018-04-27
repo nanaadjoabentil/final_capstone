@@ -7,11 +7,11 @@ use PHPMailer\PHPMailer\Exception;
 //Load Composer's autoloader
 require '../../vendor/autoload.php';
 // session_start();
-if (isset($_POST['registerParent']))
+if (isset($_POST['registerTeacher']))
 {
-  // session_start();
-  $parentmail = $_SESSION['parentemail'];
-  $parentname = $_SESSION['name'];
+  $staffname = $_SESSION['staffname'];
+  $staffemail = $_SESSION['staffemail'];
+  $staffusername = $_SESSION['staffusername'];
 
 $mail = new PHPMailer(true);                              // Passing `true` enables exceptions
 try {
@@ -27,7 +27,7 @@ try {
 
     //Recipients
     $mail->setFrom('adjoacash@gmail.com', 'School System Admin');
-    $mail->addAddress($parentmail, $parentname);     // Add a recipient
+    $mail->addAddress($staffemail, $staffname);     // Add a recipient
     // $mail->addAddress('ellen@example.com');               // Name is optional
     // $mail->addReplyTo('info@example.com', 'Information');
     // $mail->addCC('cc@example.com');
@@ -39,15 +39,14 @@ try {
 
     //Content
     $mail->isHTML(true);                                  // Set email format to HTML
-    $mail->Subject = 'Parent Registration in XYZ Primary School';
-    $mail->Body    = 'Dear Parent, <br><br> You have been successfully registered as a parent in XY Primary School\'s Parent system.'.'<br><br>
-                      Please take note of your username and password as you will be using those each time to login.<br><br>
-                      Regards, <br>
-                      XYZ Primary School Administrator.';
+    $mail->Subject = 'Staff Registration in Westlands Lyceum';
+    $mail->Body    = 'Dear '.$staffname. ' , <br> Your details have been registered into Westlands Lyceum\'s Teacher System.<br>
+                      Please take note of your username \''.$staffusername.'\'. You must change your password before logging in.<br>
+                      Regards, School System Admin';
     // $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
     $mail->send();
-    echo 'Registration confirmation email has been sent'."<br>";
+    echo 'Staff Confirmation email has been sent'."<br>";
 }
 catch (Exception $e) {
     echo 'Message could not be sent. Please check your connection or your settings'. "<br>";

@@ -1,0 +1,32 @@
+#dbutton
+{
+  width: 270px;
+  height: 270px;
+  margin: 10px;
+  /* padding: 5px; */
+  color: black;
+  text-align: center;
+  background-color: white;
+  border-color: black;
+}
+
+body {
+  margin-left: 20px;
+  margin-right: 50px;
+  /* background-color: #ffffcc; */
+  background-color: #FFFAF0;
+  position: absolute;
+}
+
+footer
+{
+  height: 80px;
+  text-align: auto;
+  background-color: #162d41;
+  color: white;
+  padding: 30px;
+  padding-left: 530px;
+  position: relative;
+  margin-top: 68px;
+  margin-right: 20px;
+}

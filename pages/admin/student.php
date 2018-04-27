@@ -18,9 +18,9 @@
       <a href="viewStudentFinancial.php"><button id="dbutton">View Student Financial Information</button></a>
       <a href="viewStudentPersonal.php"><button id="dbutton">View Student Personal Information</button></a>
       <a href="updateStudentPersonal.php"><button id="dbutton">Update Student Personal Information</button></a>
-      <a href="deleteFinancial.php"><button id="dbutton">Delete Student Financial Information</button></a>
+      <!-- <a href="deleteFinancial.php"><button id="dbutton">Delete Student Financial Information</button></a>
       <a href="deleteHealth.php"><button id="dbutton">Delete Student Health Information</button></a>
-      <a href="deleteStudent.php"><button id="dbutton">Delete Student Personal Information</button></a>
+      <a href="deleteStudent.php"><button id="dbutton">Delete Student Personal Information</button></a> -->
     </ul>
   </nav>
 </body>

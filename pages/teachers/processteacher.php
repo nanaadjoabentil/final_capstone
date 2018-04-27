@@ -31,6 +31,10 @@ else if (isset($_POST['addStaffSubjects']))
 {
   addStaffSubjects();
 }
+else if (isset($_POST['teacherchangepwd']))
+{
+  changePassword();
+}
 
 
 // ---------------------------------------------------------TEACHER LOGIN ---------------------------------------------------------------------------
@@ -60,23 +64,35 @@ function teacherLogin()
   $password = $_POST['password'];
 
   $sql = "SELECT * FROM login WHERE username = '$username' && password = '$password'";
-
+  $sql2 = "SELECT staffid, name FROM staffProfile WHERE username = '$username'";
+  // echo $sql2;
   //create new instance of database connection class
 
   $login = new Connect;
+  $login2 = new Connect;
 
   //execute query
   $run = $login->query($sql);
+  $run2 = $login2->query($sql2);
   $results = $login->fetch();
+  $results2 = $login2->fetch();
 
   if ($results)
   {
-    header("location: teacherindex.php");
+    if($results2)
+    {
+      session_start();
+      $_SESSION['staffid'] = $results2['staffid'];
+      $_SESSION['staffname'] = $results2['name'];
+        header("location: teacherindex.php");
+    }
   }
   else
   {
     echo "Error occurred. Please try again.";
   }
+
+
 }
 
 // ---------------------------------------------------------STUDENT ACADEMIC ---------------------------------------------------------------------------
@@ -101,12 +117,33 @@ function addAcademic()
 
   if($run)
   {
-    echo " Academic data for student ID " . $id . " successfully entered into database";
+    getparentMail();
+    header('Refresh: 1;');
+    echo "Academic data for student ID " . $id . " successfully entered into database"."<br>";
   }
   else
   {
     echo "Error occurred. Try again later.";
   }
+}
+
+//function to get parent email for sending emails
+function getparentMail()
+{
+  $studentid = $_POST['id'];
+
+  $sql1 = "SELECT contactemail FROM student WHERE id = '$studentid'";
+
+  $connect = new Connect;
+
+  $run = $connect->query($sql1);
+
+  $result = $connect->fetch();
+
+  session_start();
+  $_SESSION['childid'] = $studentid;
+  $_SESSION['parentemail'] = $result['contactemail'];
+
 }
 
 
@@ -291,7 +328,8 @@ function viewAllHealth()
 //function to view staff information
 function searchStaff()
 {
-  $id = $_POST['id'];
+  // session_start();
+  $id = $_SESSION['staffid'];
   $sql = "SELECT staffid,username,name,number,email,nextofkin,nextofkintelephone FROM staffProfile WHERE staffid = '$id'";
 
   $login = new Connect;
@@ -321,21 +359,22 @@ if ($results)
   //function to update staff member's personal information
   function updateStaff()
   {
-    $id = $_POST['id'];
+    session_start();
+    $id = $_SESSION['staffid'];
     $name = $_POST['name'];
     $number = $_POST['tel'];
     $email = $_POST['email'];
     $nextofkin = $_POST['nextofkin'];
     $noknumber = $_POST['noknumber'];
 
-    $sql = "SELECT * FROM staffProfile WHERE staffid = '$id'";
-
+    // $sql = "SELECT * FROM staffProfile WHERE staffid = '$id'";
+    //
     $login = new Connect;
-
-    $run = $login->query($sql);
-
-    while ($results = $login->fetch())
-    {
+    //
+    // $run = $login->query($sql);
+    //
+    // while ($results = $login->fetch())
+    // {
       $sql2 = "UPDATE staffProfile SET name = '$name' WHERE staffid = '$id'";
       $sql3 = "UPDATE staffProfile SET number = '$number' WHERE staffid = '$id'";
       $sql4 = "UPDATE staffProfile SET email = '$email' WHERE staffid = '$id'";
@@ -357,7 +396,7 @@ if ($results)
         echo "Update failed";
       }
     }
-  }
+  // }
 
   //function to delete a staff member's personal information
   function deleteStaff()
@@ -611,4 +650,30 @@ if(isset($_POST['cns']))
   header("location: cns.php");
 }
 
+
+//function to change the staff members' passwords
+function changePassword()
+{
+  $username = $_POST['username'];
+  $newpassword = $_POST['password'];
+
+  $sql = "UPDATE login SET password = '$newpassword' WHERE username =  '$username' AND usertype = 'teacher'";
+
+  $connect = new Connect;
+
+  $run = $connect->query($sql);
+
+  if ($run)
+  {
+    // header("location: index.php");
+    header('Refresh: 1; URL=index.php');
+
+    echo "Password Successfully changed";
+
+  }
+  else
+  {
+    echo "Password could not be changed. Please see Admin for help";
+  }
+}
 ?>

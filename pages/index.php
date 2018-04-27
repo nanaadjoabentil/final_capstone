@@ -9,7 +9,8 @@
      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
      <link rel="stylesheet" href="../css/bootstrap.css">
      <link rel="stylesheet" href="../css/bootstrap.min.css">
-     <link type="text/css" rel="stylesheet" href="../css/register.css"  media="screen,projection"/>
+     <!-- <link type="text/css" rel="stylesheet" href="../css/register.css"  media="screen,projection"/> -->
+     <link type="text/css" rel="stylesheet" href="../css/dashboard2.css"  media="screen,projection"/>
      <script type="text/javascript" src="../js/bootstrap.js"></script>
      <script type="text/javascript" src="../js/bootstrap.min.js"></script>
 
@@ -20,14 +21,15 @@
    </head>
 
    <body>
-     <p id="par">Parent</p>
-     <p id="adm">Administrator</p>
-     <p id="sta">Staff</p>
+     <br><br><br><br>
+     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+     <a href="parents/"><button id="dbutton">Login as Parent</button></a> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+     <a href="admin/"><button id="dbutton">Login as Administrator</button></a> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+     <a href="teachers/"><button id="dbutton">Login as Teacher</button></a>
 
-
-
-
-
-
+     <footer>
+       &copy2018  Nana Adjoa Bentil
+     </footer>
+     
    </body>
   </html>

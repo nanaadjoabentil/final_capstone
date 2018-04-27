@@ -27,7 +27,7 @@ try {
 
     //Recipients
     $mail->setFrom('adjoacash@gmail.com', 'Sender');
-    $mail->addAddress($parentmail, 'Receiver');     // Add a recipient
+    $mail->addAddress($parentmail, 'Parent');     // Add a recipient
     // $mail->addAddress('ellen@example.com');               // Name is optional
     // $mail->addReplyTo('info@example.com', 'Information');
     // $mail->addCC('cc@example.com');

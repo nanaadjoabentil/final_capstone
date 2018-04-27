@@ -120,3 +120,8 @@ footer
   text-align: center;
   color: teal;
 }
+
+#indexbutton
+{
+  width: 300px;
+}

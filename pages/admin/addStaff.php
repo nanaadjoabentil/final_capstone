@@ -23,7 +23,9 @@
 <br>
 
      <form method="post" id="form">
-       <?php require_once('processadmin.php'); ?>
+       <?php require_once('processadmin.php');
+       include("staffaddmail.php");
+       ?>
 
        <div class="form-group">
          <label for="name">Name:</label>

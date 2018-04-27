@@ -23,15 +23,18 @@
 <p id = "heading"> Dashboard </p>
 <br>
 
-<h4 id="parentswelcome"> Welcome to your personalised parents' dashboard, <?php session_start(); echo $_SESSION['username']; ?> </h4><br>
-You can access academic, financial, health and personal information about your child from here. <br><br>
-To access these, click on the tab with the name of the information you would like to see. <br><br>
+<h4 id="parentswelcome"> Welcome to your personalised parents' dashboard, <?php session_start(); echo $_SESSION['username']; ?>
+  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+  <a id="logout" href="logout.php">Logout</a></h4><br>
+
+&nbsp&nbsp&nbsp&nbsp You can access academic, financial, health and personal information about your child from here. <br><br>
+&nbsp&nbsp&nbsp&nbsp To access these, click on the tab with the name of the information you would like to see. <br><br>
 <!-- Click on the various tabs to see the various categories of information about your ward. -->
         <form method="post" id="form">
-          <button type="submit" class="btn btn-primary" id="butns" class="tabs" name="getAcademic">Academic Information</button>
-          <button type="submit" class="btn btn-primary" id="butns" name="getHealth">Health Information</button>
-          <button type="submit" class="btn btn-primary" id="butns" name="getFinancial">Financial Information</button>
-          <button type="submit" class="btn btn-primary" id="butns" name="getPersonal">Personal Information</button>
+        &nbsp&nbsp&nbsp&nbsp  <button type="submit" class="btn btn-primary" id="butns" class="tabs" name="getAcademic">Academic Information</button>
+        &nbsp&nbsp  <button type="submit" class="btn btn-primary" id="butns" name="getHealth">Health Information</button>
+        &nbsp&nbsp  <button type="submit" class="btn btn-primary" id="butns" name="getFinancial">Financial Information</button>
+        &nbsp&nbsp  <button type="submit" class="btn btn-primary" id="butns" name="getPersonal">Personal Information</button>
           <br><br><br>
           <?php require_once("processparent.php"); ?>
         </form>

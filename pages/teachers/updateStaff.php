@@ -25,11 +25,13 @@
   <br>
 
   <form method="post" id="form">
-       <?php require_once("processteacher.php");?>
+       <?php require_once("processteacher.php");
+       // session_start();
+       ?>
 
     <div class="form-group">
-      <label for="id">Update information for ID:</label>
-      <input type="text" class="form-control" id="id" name="id">
+      <!-- <label for="id">Update information for ID:</label> -->
+      <input type="hidden" class="form-control" id="id" name="id" value="<?php $_SESSION['staffid']; ?>">
     </div>
 
     <div class="form-group">

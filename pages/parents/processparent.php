@@ -27,6 +27,10 @@ else if (isset($_POST['getFinancial']))
 {
   viewFinancial();
 }
+else if(isset($_POST['parentchangepwd']))
+{
+  changePassword();
+}
 
 //function to check if parent username is unique
 function checkUsernameP()
@@ -403,5 +407,30 @@ function viewPersonal()
   }
 }
 
+//function to change the staff members' passwords
+function changePassword()
+{
+  $username = $_POST['username'];
+  $newpassword = $_POST['password'];
+
+  $sql = "UPDATE login SET password = '$newpassword' WHERE username =  '$username' AND usertype = 'parent'";
+
+  $connect = new Connect;
+
+  $run = $connect->query($sql);
+
+  if ($run)
+  {
+    // header("location: index.php");
+    header('Refresh: 1; URL=index.php');
+
+    echo "Password Successfully changed";
+
+  }
+  else
+  {
+    echo "Password could not be changed. Please see Admin for help";
+  }
+}
 
  ?>

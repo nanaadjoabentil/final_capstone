@@ -24,14 +24,12 @@
        <?php require_once('processteacher.php');?>
 
           <div class="wrapper">
-              <h2 class="form-signin-heading">Login: Teacher</h2><br>
+              <h4 class="form-signin-heading">Change Password: Teacher</h4><br>
               <input type="text" class="form-control" name="username" placeholder="Username" required/><br>
-              <input type="password" class="form-control" name="password" placeholder="Password" required/><br>
+              <input type="password" class="form-control" name="password" placeholder="New Password" required/><br>
 
-              <button class="btn btn-lg btn-primary btn-block" type="submit" id="butns" name="teacherlogin">Login</button>
-              <br>
-              <a href="changepassword.php">Forgot Password? Change!</a><br><br>
-              <a href="../index.php">Back to Homepage</a>
+              <button class="btn btn-lg btn-primary btn-block" type="submit" id="butns" name="teacherchangepwd">Change</button><br>
+              <a href="index.php">Back to Login</a>
             </form>
           </div>
       </body>

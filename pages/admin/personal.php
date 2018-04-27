@@ -28,7 +28,7 @@
     <button type="submit" class="btn btn-primary" id="butns" name="add">Add New</button>
     <button type="submit" class="btn btn-primary" id="butns" name="update">Update a Record</button>
     <button type="submit" class="btn btn-primary" id="butns" name="search">Search</button>
-    <button type="submit" class="btn btn-primary" id="butns" name="delete">Delete</button>
+    <!-- <button type="submit" class="btn btn-primary" id="butns" name="delete">Delete</button> -->
     <br><br><br>
     <?php
     require_once("processadmin.php");
@@ -56,9 +56,6 @@
     }
     ?>
   </form>
-  <footer>
-    &copy2018  Nana Adjoa Bentil
-  </footer>
 
   </body>
   </html>

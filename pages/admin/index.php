@@ -29,7 +29,8 @@
            <input type="text" class="form-control" name="username" placeholder="Username" required/><br>
            <input type="password" class="form-control" name="password" placeholder="Password" required/><br>
 
-           <button class="btn btn-lg btn-primary btn-block" type="submit" id="butns" name="adminlogin">Login</button>
+           <button class="btn btn-lg btn-primary btn-block" type="submit" id="butns" name="adminlogin">Login</button><br>
+            <a href="../index.php">Back to Homepage</a>
          </form>
        </div>
        <footer>

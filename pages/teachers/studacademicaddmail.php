@@ -6,7 +6,11 @@ use PHPMailer\PHPMailer\Exception;
 
 //Load Composer's autoloader
 require '../../vendor/autoload.php';
-// session_start();
+
+if (isset($_POST['addAcademic']))
+{
+  $childid = $_SESSION['childid'];
+  $parentmail = $_SESSION['parentemail'];
 
 $mail = new PHPMailer(true);                              // Passing `true` enables exceptions
 try {
@@ -21,8 +25,8 @@ try {
     $mail->Port = 587;                                    // TCP port to connect to
 
     //Recipients
-    $mail->setFrom('adjoacash@gmail.com', 'Sender');
-    $mail->addAddress($parentmail, 'Receiver');     // Add a recipient
+    $mail->setFrom('adjoacash@gmail.com', 'School System Admin');
+    $mail->addAddress($parentmail, 'Parent');     // Add a recipient
     // $mail->addAddress('ellen@example.com');               // Name is optional
     // $mail->addReplyTo('info@example.com', 'Information');
     // $mail->addCC('cc@example.com');
@@ -34,14 +38,16 @@ try {
 
     //Content
     $mail->isHTML(true);                                  // Set email format to HTML
-    $mail->Subject = 'Student Academic information update - XYZ primary';
-    $mail->Body    = 'Dear Parent, <br> Your child '.$childname.' has been successfully enrolled in XYZ Primary.'.'<br>
-                      Please take note of '.$childname.'\'s student ID number: <b>'.$childid.'</b><br>';
+    $mail->Subject = 'Student Academic information update - Westlands Lyceum';
+    $mail->Body    = 'Dear Parent, <br><br> The academic information for your child has been updated.
+                      Please do well to check it out. <br><br>
+                      Regards, School System Admin';
     // $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
     $mail->send();
-    echo 'Email has been sent'."<br>";
+    echo 'Update email has been sent to parent'."<br>";
 }
 catch (Exception $e) {
     echo 'Message could not be sent. Please check your connection or your settings'. "<br>";
+}
 }

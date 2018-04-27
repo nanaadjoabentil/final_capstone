@@ -23,9 +23,10 @@
 
 <p id = "heading"> Dashboard </p>
 <br>
+<?php session_start(); ?>
 
-<h4 id="parentswelcome"> Welcome Teacher!</h4><br>
-You can access information about students, and staff from here. <br><br>
+<h4 id="parentswelcome"> Welcome <?php echo $_SESSION['staffname']; ?>! <a id="logout" href="logout.php">Logout</a></h4><br>
+You can access information about students, and your staff profile from here. <br><br>
 To access these, click on the tab with the name of the information you would like to see. <br><br>
 
         <form method="post" id="form">

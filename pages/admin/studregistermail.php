@@ -39,8 +39,8 @@ try {
 
     //Content
     $mail->isHTML(true);                                  // Set email format to HTML
-    $mail->Subject = 'Student Registration in XYZ Primary School';
-    $mail->Body    = 'Dear Parent, <br> Your child '.$childname.' has been successfully enrolled in XYZ Primary.'.'<br>
+    $mail->Subject = 'Student Registration in Westlands Lyceum';
+    $mail->Body    = 'Dear Parent, <br> Your child '.$childname.' has been successfully enrolled in Westlands Lyceum.'.'<br>
                       Please take note of '.$childname.'\'s student ID number: <b>'.$childid.'</b><br>';
     // $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 

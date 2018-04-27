@@ -22,18 +22,21 @@
   <p id = "heading"> Staff Profile Information </p>
   <a href="profile.php"><input type="button" class="btn btn-primary" id="butns" value="Back"></a>
   <br>
-       <form method="post" id="form">
+       <!-- <form method="post" id="form"> -->
 
-        <div class="form-group">
-           <label for="id">Search for staff by ID</label>
-           <input type="text" class="form-control" id="id" name="id">
-         </div>
+        <!-- <div class="form-group"> -->
+           <!-- <label for="id">Search for staff by ID</label> -->
+           <!-- <input type="hidden" class="form-control" id="id" name="id" value="<!?php $_SESSION['staffid']; ?>"> -->
+         <!-- </div> -->
 
-         <button type="submit" class="btn btn-primary" id="butns" name="searchStaff">Search</button>
+         <!-- <button type="submit" class="btn btn-primary" id="butns" name="searchStaff">Search</button> -->
 
-       </div>
-       </form>
-       <?php require_once('processteacher.php');?>
+       <!-- </div> -->
+       <!-- </form> -->
+       <?php require_once('processteacher.php');
+       session_start();
+       searchStaff();
+       ?>
 
        <footer>
          &copy2018  Nana Adjoa Bentil
